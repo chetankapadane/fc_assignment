@@ -29,3 +29,7 @@ Go to [http://localhost:4000/playground](http://localhost:4000)
 $ npm test
 ```
 This will run the server-side tests
+
+## Locating database dump
+
+firstcry folder contains mongoDump and localhost/firstcry contains .json files in order to import database
