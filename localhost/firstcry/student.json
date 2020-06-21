@@ -1,0 +1,11 @@
+{ 
+    "_id" : ObjectId("5eef19a9bc5e9710583cacfe"), 
+    "rollNumber" : NumberInt(1), 
+    "firstName" : "Chetan", 
+    "lastName" : "Kapadane", 
+    "class" : NumberInt(9), 
+    "parentContact" : NumberInt(1234567890), 
+    "createdAt" : ISODate("2020-06-21T08:26:17.597+0000"), 
+    "updatedAt" : ISODate("2020-06-21T08:26:17.597+0000"), 
+    "__v" : NumberInt(0)
+}
