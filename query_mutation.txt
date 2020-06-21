@@ -1,0 +1,101 @@
+GoTo http://localhost:4000/playground in order to see API in action
+
+mutation {
+  createStudent(studentInfo:{
+    rollNumber: 1, 
+    firstName: "Chetan",
+    lastName: "Kapadane",
+    class: 9,
+    parentContact: 1234567890,
+  }) {
+    status
+    message
+  }
+}
+
+query {
+  students {
+    rollNumber
+    firstName
+    lastName
+    class
+    parentContact
+    address {
+      _id
+      state
+      pin
+      district
+      houseName
+      houseNumber
+      landmark
+    }
+  }
+}
+
+
+mutation {
+  updateStudent(rollNumber:1, updateInfo:{
+    firstName: "Chetan new"
+  }) {
+    status
+    message
+  }
+}
+
+mutation {
+  removeStudent(rollNumber:1) {
+    status
+    message
+  }
+}
+
+
+	
+======================================================================================
+address query and mutation : - 
+
+mutation {
+  addAddress(addressInfo: {
+    rollNo: 1,
+    state: "MH",
+    district:"Pune",
+    pin: 411027,
+    houseName: "LiveLaugh",
+    houseNumber: 1,
+    landmark: "Future Tree"
+  }) {
+    status
+    message
+  }
+}
+
+
+query {
+  addresses {
+    _id
+    state
+    district
+    pin
+    houseName
+    houseNumber
+    rollNo
+    landmark
+  }
+}
+
+
+mutation {
+  updateAddress(id:"5eef16e9e972ec5450d7b76e", updatedAddress: {
+    houseName: "LiveLaugh New"
+  }) {
+    status
+    message
+  }
+}
+
+mutation {
+  removeAddress(_id:"5eef16e9e972ec5450d7b76e") {
+    status
+    message
+  }
+}
