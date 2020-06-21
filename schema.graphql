@@ -1,0 +1,79 @@
+# Exposes a URL that specifies the behaviour of this scalar.
+directive @specifiedBy(
+  # The URL that specifies the behaviour of this scalar.
+  url: String!
+) on SCALAR
+type Response {
+  status: Int
+  message: String
+}
+
+input StudentInfo {
+  rollNumber: Int!
+  firstName: String
+  lastName: String
+  class: Int
+  parentContact: Int
+}
+
+input UpdateInfo {
+  firstName: String
+  lastName: String
+  class: Int
+  parentContact: Int
+}
+
+type StudentDetails {
+  rollNumber: Int!
+  firstName: String
+  lastName: String
+  class: Int
+  parentContact: Int
+  address: [AddressInfo]
+}
+
+input AddressDetails {
+  rollNo: Int!
+  _id: String
+  state: String
+  district: String
+  pin: Int
+  houseName: String
+  houseNumber: Int
+  landmark: String
+}
+
+type AddressInfo {
+  rollNo: Int!
+  _id: String
+  state: String
+  district: String
+  pin: Int
+  houseName: String
+  houseNumber: Int
+  landmark: String
+}
+
+input UpdatedAddress {
+  state: String
+  district: String
+  pin: Int
+  houseName: String
+  houseNumber: String
+  landmark: String
+}
+
+type Query {
+  students(rollNumber: Int): [StudentDetails]
+  addresses(rollNumber: Int): [AddressInfo]
+}
+
+type Mutation {
+  createStudent(studentInfo: StudentInfo): Response
+  updateStudent(rollNumber: Int!, updateInfo: UpdateInfo): Response
+  removeStudent(rollNumber: Int!): Response
+  addAddress(addressInfo: AddressDetails): Response
+  updateAddress(id: String!, updatedAddress: UpdatedAddress): Response
+  removeAddress(_id: String!): Response
+}
+
