@@ -1,0 +1,29 @@
+{
+  "name": "firstcry_assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./src/server.js",
+    "test": "mocha --timeout 5000 --require @babel/register 'src/**/**spec.js'"
+  },
+  "author": "chetan kapadane",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/register": "^7.10.3",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mocha": "^8.0.1",
+    "mongoose": "^5.9.19",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.1.0"
+  },
+  "type": "module"
+}
